@@ -19,7 +19,7 @@ public class BankAccount {
     }
 
     public void SaveWithdraw(Transaction transaction){
-        if (transaction.getAmount() > 0){
+        if (transaction.getAmount() > 0 && transaction.getAmount() <= balance){
             balance += transaction.getAmount();
             transactionHistory.add("Withdrew: " + transaction.getAmount());
         }
