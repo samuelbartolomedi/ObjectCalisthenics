@@ -13,12 +13,12 @@ public class BankAccount {
                 SaveDeposit(transaction);
             }
             if (type.equals("withdraw")){
-                SaveWithdrawn(transaction);
+                SaveWithdraw(transaction);
             }
         }
     }
 
-    public void SaveWithdrawn(Transaction transaction){
+    public void SaveWithdraw(Transaction transaction){
         if (transaction.getAmount() > 0){
             balance += transaction.getAmount();
             transactionHistory.add("Withdrew: " + transaction.getAmount());
