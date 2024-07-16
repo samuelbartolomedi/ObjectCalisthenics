@@ -1,0 +1,22 @@
+public class Order {
+    private double totalAmount;
+    private String status; 
+
+    public void updateStatus(String paymentStatus, boolean inStock) {
+        switch (paymentStatus){
+            case "paid":
+               switch (inStock){
+                case true:
+                    status = "confirmed";
+                    totalAmount *= 0.9; // Apply discount
+                    break;
+                case false:
+                    status = "waiting for stock";
+                    break;
+               }
+            case "unpaid":
+                status = "pending payment";
+                break;
+        }
+    }
+}
