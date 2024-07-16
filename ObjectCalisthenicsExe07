@@ -1,0 +1,28 @@
+public class Project {
+    private String name;
+
+    public Project(String name) {
+        this.name = name;
+    }
+}
+
+public class TeamMember{
+    private List<String> teamMembers;
+
+    public void addTeamMember(String member){
+        teamMembers.add(member);
+    }
+}
+
+public class Task{
+    private List<String> tasks = new ArrayList<>();
+    private Map<String, String> taskAssigments = new HashMap<>();
+
+    public void addTask(String task){
+        tasks.add(task;)
+    }
+
+    private void assignTask(String task, String member){
+        taskAssigments.add(task, member);
+    }
+}

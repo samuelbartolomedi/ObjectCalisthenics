@@ -5,7 +5,7 @@ public class Classroom {
         return students;
     }
 
-    private void addStudent(string fullName, decimal id){
+    private void addStudent(String fullName, decimal id){
         students.add(new Student(fullName, id))
     }
 
