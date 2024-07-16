@@ -8,17 +8,18 @@ public class BankAccount {
     }
         public void processTransactions(List<Transaction> transactions) {
         for (Transaction transaction : transactions) {
-            string type = GetTransactionType(transaction);
-            if (type.equals("deposit")){
-                SaveDeposit(transaction);
-            }
-            if (type.equals("withdraw")){
-                SaveWithdraw(transaction);
+            switch (transaction.getType()){
+                case "deposit":
+                    saveDeposit(transaction);
+                break;
+                case "withdraw":
+                    saveWithdraw(transaction);
+                break;
             }
         }
     }
 
-    public void SaveWithdraw(Transaction transaction){
+    public void saveWithdraw(Transaction transaction){
         if (transaction.getAmount() > 0 && transaction.getAmount() <= balance){
             balance += transaction.getAmount();
             transactionHistory.add("Withdrew: " + transaction.getAmount());
@@ -28,26 +29,13 @@ public class BankAccount {
         }
     }
 
-    public void SaveDeposit(Transaction transaction){
+    public void saveDeposit(Transaction transaction){
         if (transaction.getAmount() > 0){
             balance += transaction.getAmount();
             transactionHistory.add("Deposited: " + transaction.getAmount());
         }
         else{
             transactionHistory.add("Invalid deposit amount: " + transaction.getAmount());
-        }
-    }
-
-
-    public string GetTransactionType(Transaction transaction){
-        string type = "";
-        if (transaction.getType().equals("deposit")){
-            type = "deposit";
-            return type;
-        }
-        if (transaction.getType().equals("withdraw")){
-            type = "withdraw";
-            return type;
         }
     }
 }
