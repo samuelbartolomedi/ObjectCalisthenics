@@ -1,0 +1,6 @@
+public void printStudentNames(Classroom classroom) {
+    List<Student> listStudents = classroom.getStudents();
+    for (Student student : listStudents){
+        System.out.println(student.getName());
+    }
+}

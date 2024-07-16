@@ -1,0 +1,15 @@
+public class Classroom {
+    private List<Student> students;
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    private void addStudent(string fullName, decimal id){
+        students.add(new Student(fullName, id))
+    }
+
+    private void removeStudent(decimal id){
+        students.remove(student => student.Where(x => x.id = id))
+    }
+}

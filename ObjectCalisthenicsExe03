@@ -1,0 +1,39 @@
+public class Library {
+    private List<Book> books;
+
+    public void addBook(String isbn, String title, String author) {
+        books.add(new Book(isbn, title, author));
+    }
+
+    public void removeBook(String isbn) {
+        books.removeIf(book -> book.getIsbn().equals(isbn));
+    }
+
+    // other methods
+}
+
+public class Isbn{
+
+}
+
+public class Title{
+
+}
+
+public class Author{
+    
+}
+
+public class Book {
+    private String isbn;
+    private String title;
+    private String author;
+
+    public Book(String isbn, String title, String author) {
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+    }
+
+    // getters and setters
+}
